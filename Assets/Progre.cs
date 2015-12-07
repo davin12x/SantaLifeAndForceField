@@ -2,7 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Progre : MonoBehaviour {
+public class Progre : MonoBehaviour
+{
+    float dTime = .8f;
 
 	
 	void Start () {
@@ -12,7 +14,9 @@ public class Progre : MonoBehaviour {
 	
 	void Update () {
         Image img = GetComponent<Image>();
-        img.fillAmount = Mathf.Lerp(img.fillAmount,.1f,Time.deltaTime*.7f);
-	
-	}
+        //while(img.fillAmount >= 0)
+        img.fillAmount = Mathf.Lerp(img.fillAmount, .1f, Time.deltaTime * dTime);
+
+
+    }
 }
